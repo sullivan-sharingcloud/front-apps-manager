@@ -1,0 +1,22 @@
+[package]
+name = "microfrontend-manager"
+description = "Manage your micro-frontend versions using this API"
+version = "0.1.0"
+edition = "2021"
+authors = ["bugounet"]
+autobins = false
+
+[dependencies]
+# Depend on AWS lambda runtime to feature a serverless API
+lambda_runtime = "0.2.0"
+lambda_runtime_errors = "0.1.0"
+lambda_http = "0.1.0"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+http = "0.1.1"
+
+# AWS Lambda anetrypoint must be called "bootstrap"
+[[bin]]
+name = "bootstrap"
+path = "src/main.rs"
